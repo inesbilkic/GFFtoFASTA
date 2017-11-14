@@ -25,6 +25,6 @@ __description__     = 'Parse GFF infile, write to stdout as mfasta'
 __author__          = 'Mark B Schultz'
 __author_email__    = 'dr.mark.schultz@gmail.com'
 __github_username__ = 'schultzm'
-__install__         = 'pip3 install https://github.com/schultzm/GFFtoFASTA.git'
+__install__         = 'pip3 install git+https://github.com/schultzm/GFFtoFASTA.git'
 __license__         = 'AGPL-3.0'
 __all__             = []
