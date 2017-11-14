@@ -15,16 +15,19 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
 
+import gff2fa
+import sys
+
+def version():
+    '''
+    Print the version
+    '''
+    print('Version:', gff2fa.__version__)
+    print('Date:', gff2fa.__version_date__)
+    print('Author:', gff2fa.__author__)
+    print('Email:', gff2fa.__author_email__)
+    print('Github:', gff2fa.__github_username__)
+    print('Install:', gff2fa.__install__)
+    print('🐛', file=sys.stderr)
 
 
-__name__            = 'gff2fa'
-__parent_dir__      = 'GFFtoFASTA'
-__version__         = '0.0.01b'
-__version_date__    = 'Tue 14 November, 2017'
-__description__     = 'Parse GFF infile, write to stdout as mfasta'
-__author__          = 'Mark B Schultz'
-__author_email__    = 'dr.mark.schultz@gmail.com'
-__github_username__ = 'schultzm'
-__install__         = 'pip3 install https://github.com/schultzm/GFFtoFASTA.git'
-__license__         = 'AGPL-3.0'
-__all__             = []

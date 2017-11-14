@@ -25,12 +25,27 @@ def main():
     '''
     import argparse
     parser = argparse.ArgumentParser(description = "Convert GFF to mfasta")
-    parser.add_argument('-i', '--infile', help = 'GFF infile', required=True)
+    subparsers = parser.add_subparsers(title='Sub-commands help:',
+                                      help='', metavar='',
+                                      dest='subparser_name')
+    convert = subparsers.add_parser('convert',
+                                    help='Convert GFF to mfasta to stdout.',
+                                    description='Convert GFF to mfasta. ')
+    convert.add_argument('infile', help = 'GFF infile.')
+    version = subparsers.add_parser('version', help='Print version.')
     args = parser.parse_args()
-    parse_gff(args.infile)
 
+    import os
+    if not args.subparser_name:
+        os.system('gff2fa -h')
+    elif args.subparser_name == 'version':
+        from gff2fa.version.version import version
+        version()
+    else:
+        if args.subparser_name == 'convert':
+            parse_gff(args.infile)
 
-def parse_gff(infile)
+def parse_gff(infile):
     '''
     Parameters:
         infile: gff format infile
